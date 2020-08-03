@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="DB@localhost">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="4.11">
+    <root id="1">
+      <ServerVersion>10.14</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="APP"/>
+    <schema id="3" parent="1" name="NULLID"/>
+    <schema id="4" parent="1" name="SA">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="1" name="SQLJ"/>
+    <schema id="6" parent="1" name="SYS"/>
+    <schema id="7" parent="1" name="SYSCAT"/>
+    <schema id="8" parent="1" name="SYSCS_DIAG"/>
+    <schema id="9" parent="1" name="SYSCS_UTIL"/>
+    <schema id="10" parent="1" name="SYSFUN"/>
+    <schema id="11" parent="1" name="SYSIBM"/>
+    <schema id="12" parent="1" name="SYSPROC"/>
+    <schema id="13" parent="1" name="SYSSTAT"/>
+    <table id="14" parent="4" name="CATEGORY"/>
+    <table id="15" parent="4" name="MEMBER"/>
+    <table id="16" parent="4" name="MEMBERROLE"/>
+    <table id="17" parent="4" name="ROLE"/>
+    <column id="18" parent="14" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="14" name="CATEGORYNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="14" name="DESCRIPTION">
+      <Position>3</Position>
+      <DataType>VARCHAR(25)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="14" name="VISIBLE">
+      <Position>4</Position>
+      <DataType>BOOLEAN|16s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="22" parent="14" name="SQL181126113749560">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="14" name="SQL181126113749560">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="15" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="15" name="USERNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(40)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="15" name="PASSWORD">
+      <Position>3</Position>
+      <DataType>VARCHAR(40)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="15" name="EMAIL">
+      <Position>4</Position>
+      <DataType>VARCHAR(40)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="15" name="REGISTRATIONDATE">
+      <Position>5</Position>
+      <DataType>TIMESTAMP|93s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="29" parent="15" name="SQL181126113749440">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="30" parent="15" name="SQL181126113749440">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="16" name="RID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="16" name="MID">
+      <Position>2</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="33" parent="16" name="SQL181126113749512">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>RID
+MID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="34" parent="16" name="SQL181126113749511">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>RID</ColNames>
+    </index>
+    <index id="35" parent="16" name="SQL181126113749510">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MID</ColNames>
+    </index>
+    <key id="36" parent="16" name="SQL181126113749512">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>RID
+MID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="16" name="SQL181126113749511">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>RID</ColNames>
+      <RefSchemaName>SA</RefSchemaName>
+      <RefTableName>ROLE</RefTableName>
+      <RefKeyName>SQL181126113749470</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="38" parent="16" name="SQL181126113749510">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MID</ColNames>
+      <RefSchemaName>SA</RefSchemaName>
+      <RefTableName>MEMBER</RefTableName>
+      <RefKeyName>SQL181126113749440</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="39" parent="17" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="17" name="ROLENAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(20)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="41" parent="17" name="SQL181126113749470">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="42" parent="17" name="SQL181126113749471">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ROLENAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="43" parent="17" name="SQL181126113749470">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="44" parent="17" name="SQL181126113749471">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ROLENAME</ColNames>
+    </key>
+  </database-model>
+</dataSource>
